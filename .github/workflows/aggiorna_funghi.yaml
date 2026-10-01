@@ -28,6 +28,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: Esegui elaborazione
+        env:
+          ARPA_TOKEN: ${{ secrets.ARPA_TOKEN }}
         run: |
           python main.py
 
