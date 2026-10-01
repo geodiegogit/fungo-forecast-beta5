@@ -12,6 +12,12 @@ ID_STAZIONE = "1545"
 
 def get_sensor_ids_for_station(id_stazione: str) -> Dict[str, str]:
     params = {"$where": f"idstazione = '{id_stazione}'", "$limit": 50}
+    
+    headers = {}
+    app_token = os.environ.get("ARPA_TOKEN")
+    if app_token:
+        headers["X-App-Token"] = app_token
+    
     response = requests.get(ENDPOINT_SENSORS_ANAGRAFICA, params=params, timeout=20)
     response.raise_for_status()
     mappa = {}
