@@ -37,6 +37,11 @@ def download_weather_history(mappa_sensori: Dict[str, str], days: int = 45) -> p
         "$where": f"idsensore in ('{id_list}') AND data >= '{start_date}' AND valore != -9999",
         "$limit": 50000, "$order": "data ASC"
     }
+    headers = {}
+    app_token = os.environ.get("ARPA_TOKEN")
+    if app_token:
+        headers["X-App-Token"] = app_token
+    
     response = requests.get(ENDPOINT_METEO_DATA, params=params, timeout=30)
     response.raise_for_status()
     records = response.json()
