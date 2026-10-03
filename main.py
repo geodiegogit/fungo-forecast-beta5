@@ -18,7 +18,7 @@ def get_sensor_ids_for_station(id_stazione: str) -> Dict[str, str]:
     if app_token:
         headers["X-App-Token"] = app_token
     
-    response = requests.get(ENDPOINT_SENSORS_ANAGRAFICA, params=params, timeout=20)
+    response = requests.get(ENDPOINT_SENSORS_ANAGRAFICA, params=params,headers=headers, timeout=20)
     response.raise_for_status()
     mappa = {}
     for s in response.json():
@@ -42,7 +42,7 @@ def download_weather_history(mappa_sensori: Dict[str, str], days: int = 45) -> p
     if app_token:
         headers["X-App-Token"] = app_token
     
-    response = requests.get(ENDPOINT_METEO_DATA, params=params, timeout=30)
+    response = requests.get(ENDPOINT_METEO_DATA, params=params, headers=headers, timeout=30)
     response.raise_for_status()
     records = response.json()
     if not records: return pd.DataFrame()
