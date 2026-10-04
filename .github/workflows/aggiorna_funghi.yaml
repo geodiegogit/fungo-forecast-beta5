@@ -37,7 +37,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/previsioni.json
+          git add data/previsioni.json data/storico.json
           git commit -m "Auto-update previsioni meteo funghi [skip ci]" || exit 0
           git push
           
