@@ -3,7 +3,7 @@ name: Aggiornamento Previsioni Funghi beta5
 on:
   schedule:
     # Esegue ogni notte alle 01:00 UTC (03:00 ora italiana estiva)
-    - cron: '00 01 * * *'
+    - cron: '0 1 * * *'
   workflow_dispatch:
 
 permissions:
