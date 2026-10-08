@@ -307,6 +307,7 @@ def main():
     diagnosi = analizzatore.analizza(storico_finale)
     previsioni = calcola_microzone(diagnosi)
 
+# --- RIPRISTINO SALVATAGGIO SNAPSHOT (FOTO GIORNALIERA) ---
     proiezioni_salvate = {}
     try:
         if os.path.exists("data/previsioni.json"):
@@ -316,22 +317,30 @@ def main():
     except Exception:
         pass
 
+    # Salviamo la foto esatta dell'indice di buttata di oggi, inalterabile
     oggi_str = datetime.now().strftime("%Y-%m-%d")
     proiezioni_salvate[oggi_str] = {z["zona"]: round(z["indice_buttata"], 1) for z in previsioni}
-    keys = sorted(proiezioni_salvate.keys())[-15:]
+
+    # Teniamo in memoria gli ultimi 30 giorni per la heatmap
+    keys = sorted(proiezioni_salvate.keys())[-30:]
     proiezioni_salvate = {k: proiezioni_salvate[k] for k in keys}
+    # -----------------------------------------------------------
 
     output = {
         "ultimo_aggiornamento": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "stazione": {"id": ID_STAZIONE, "nome": "San Siro", "quota_m": 1285},
-        "diagnosi_meteo": diagnosi, "zone": previsioni,
-        "proiezioni_salvate": proiezioni_salvate,
+        "diagnosi_meteo": diagnosi,
+        "zone": previsioni,
+        "proiezioni_salvate": proiezioni_salvate, # <-- Reinserito nel JSON
         "storico_completo": storico_finale
     }
 
     os.makedirs("data", exist_ok=True)
-    with open("data/previsioni.json", "w", encoding="utf-8") as f: json.dump(output, f, ensure_ascii=False, indent=2)
-    with open("data/storico.json", "w", encoding="utf-8") as f: json.dump(storico_finale, f, ensure_ascii=False, indent=2)
+    with open("data/previsioni.json", "w", encoding="utf-8") as f:
+        json.dump(output, f, ensure_ascii=False, indent=2)
+        
+    with open("data/storico.json", "w", encoding="utf-8") as f:
+        json.dump(storico_finale, f, ensure_ascii=False, indent=2)
 
 if __name__ == "__main__":
     main()
