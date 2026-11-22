@@ -1,5 +1,5 @@
 {
-  "ultimo_aggiornamento": "2026-11-21 12:18:31",
+  "ultimo_aggiornamento": "2026-11-22 12:22:28",
   "stazione": {
     "id": "1545",
     "nome": "San Siro",
@@ -8,18 +8,18 @@
   "diagnosi_meteo": {
     "stagione": "AUTUNNO",
     "pioggia_30gg": 50.0,
-    "t_max_attuale": 10.2,
-    "t_min_attuale": 4.9,
-    "rh_media_attuale": 44.4,
-    "rh_media_inerzia": 63.9,
-    "vento_max_attuale": 22.3,
+    "t_max_attuale": 11.9,
+    "t_min_attuale": 4.2,
+    "rh_media_attuale": 41.6,
+    "rh_media_inerzia": 54.1,
+    "vento_max_attuale": 19.1,
     "pioggia_oggi": 0.0,
     "eventi": [
       {
         "indice": 61,
         "data": "2026-10-21",
         "pioggia": 100.0,
-        "giorni_da_evento": 30,
+        "giorni_da_evento": 31,
         "ritardo": 3,
         "soglia": 40.0,
         "smorzamento": 0.09000000000000001,
@@ -29,34 +29,34 @@
     "rischio_senescenza": false,
     "evento_rilevato": true,
     "data_evento": "2026-10-21",
-    "giorni_da_evento": 30,
+    "giorni_da_evento": 31,
     "ritardo_siccita_applicato": 3
   },
   "zone": [
     {
       "zona": "Camnasco",
       "indice_buttata": 0.0,
-      "t_min_stimata": 8.4,
-      "t_max_stimata": 16.2,
-      "giorni_mancanti_al_picco": -23,
+      "t_min_stimata": 7.7,
+      "t_max_stimata": 17.9,
+      "giorni_mancanti_al_picco": -24,
       "stato": "In esaurimento",
       "onde": [
         {
-          "giorni_mancanti_da_ieri": -23,
-          "indice_picco": 1.5
+          "giorni_mancanti_da_ieri": -24,
+          "indice_picco": 1.9
         }
       ]
     },
     {
       "zona": "Betulle SE",
       "indice_buttata": 0.0,
-      "t_min_stimata": 5.3,
-      "t_max_stimata": 13.1,
-      "giorni_mancanti_al_picco": -18,
+      "t_min_stimata": 4.6,
+      "t_max_stimata": 14.8,
+      "giorni_mancanti_al_picco": -19,
       "stato": "In esaurimento",
       "onde": [
         {
-          "giorni_mancanti_da_ieri": -18,
+          "giorni_mancanti_da_ieri": -19,
           "indice_picco": 0.0
         }
       ]
@@ -64,13 +64,13 @@
     {
       "zona": "Betulle NE",
       "indice_buttata": 0.0,
-      "t_min_stimata": 5.8,
-      "t_max_stimata": 10.1,
-      "giorni_mancanti_al_picco": -19,
+      "t_min_stimata": 5.1,
+      "t_max_stimata": 11.8,
+      "giorni_mancanti_al_picco": -20,
       "stato": "In esaurimento",
       "onde": [
         {
-          "giorni_mancanti_da_ieri": -19,
+          "giorni_mancanti_da_ieri": -20,
           "indice_picco": 0.1
         }
       ]
@@ -78,13 +78,13 @@
     {
       "zona": "Faggi Ovest",
       "indice_buttata": 0.0,
-      "t_min_stimata": 3.6,
-      "t_max_stimata": 6.9,
-      "giorni_mancanti_al_picco": -15,
-      "stato": "In esaurimento",
+      "t_min_stimata": 2.9,
+      "t_max_stimata": 8.6,
+      "giorni_mancanti_al_picco": -16,
+      "stato": "Blocco freddo",
       "onde": [
         {
-          "giorni_mancanti_da_ieri": -15,
+          "giorni_mancanti_da_ieri": -16,
           "indice_picco": 0.0
         }
       ]
@@ -92,26 +92,19 @@
     {
       "zona": "Abeti Nord",
       "indice_buttata": 0.0,
-      "t_min_stimata": 2.1,
-      "t_max_stimata": 6.4,
-      "giorni_mancanti_al_picco": -14,
+      "t_min_stimata": 1.4,
+      "t_max_stimata": 8.1,
+      "giorni_mancanti_al_picco": -15,
       "stato": "In esaurimento",
       "onde": [
         {
-          "giorni_mancanti_da_ieri": -14,
+          "giorni_mancanti_da_ieri": -15,
           "indice_picco": 0.1
         }
       ]
     }
   ],
   "proiezioni_salvate": {
-    "2026-10-16": {
-      "Camnasco": 47.2,
-      "Betulle SE": 44.8,
-      "Betulle NE": 84.3,
-      "Faggi Ovest": 55.9,
-      "Abeti Nord": 58.6
-    },
     "2026-10-17": {
       "Camnasco": 34.7,
       "Betulle SE": 33.6,
@@ -309,6 +302,13 @@
       "Abeti Nord": 0.0
     },
     "2026-11-21": {
+      "Camnasco": 0.0,
+      "Betulle SE": 0.0,
+      "Betulle NE": 0.0,
+      "Faggi Ovest": 0.0,
+      "Abeti Nord": 0.0
+    },
+    "2026-11-22": {
       "Camnasco": 0.0,
       "Betulle SE": 0.0,
       "Betulle NE": 0.0,
@@ -1144,6 +1144,15 @@
       "t_min": 4.9,
       "rh_media": 44.4,
       "vento_max": 22.3
+    },
+    {
+      "data": "2026-11-21",
+      "pioggia_mm": 0.0,
+      "t_media": 7.0,
+      "t_max": 11.9,
+      "t_min": 4.2,
+      "rh_media": 41.6,
+      "vento_max": 19.1
     }
   ]
 }
